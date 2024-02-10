@@ -23,7 +23,7 @@ public class commonSentences extends ReusableMethods {
     @AndroidFindBy(className = "android.widget.TextView")
     public WebElement levelSelector;
 
-    @AndroidFindBy(id = "com.pointrlabs.demo.uatapi.prod:id/walkthrough_next_button")
+    @AndroidFindBy(id = "com.pointrlabs.demo.qa3gateway.prod:id/walkthrough_next_button")
     public WebElement nextStep1;
 
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
@@ -44,8 +44,14 @@ public class commonSentences extends ReusableMethods {
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
     public WebElement allowButton;
 
-    @AndroidFindBy(id = "com.pointrlabs.demo.uatapi.prod:id/searchViewEt")
+    @AndroidFindBy(id = "com.pointrlabs.demo.qa3gateway.prod:id/searchViewEt")
     public WebElement searchInput;
+
+    @AndroidFindBy(xpath = "(//android.view.ViewGroup[@resource-id='com.pointrlabs.demo.qa3gateway.prod:id/poiSummary'])[1]")
+    public WebElement firstResult;
+
+    @AndroidFindBy(id = "com.pointrlabs.demo.qa3gateway.prod:id/poiDetailButtonText")
+    public WebElement directionButton;
 
 
 }

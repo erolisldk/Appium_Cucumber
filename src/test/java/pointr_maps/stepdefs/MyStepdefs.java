@@ -17,6 +17,7 @@ public class MyStepdefs extends ReusableMethods {
     public commonSentences commonSentences = new commonSentences();
     @Given("user navigates to {string}")
     public void userNavigatesTo(String othaimMall) {
+
         commonSentences.nextStep1.click();
         commonSentences.nextStep1.click();
         commonSentences.nextStep1.click();
@@ -24,36 +25,44 @@ public class MyStepdefs extends ReusableMethods {
         commonSentences.nextStep1.click();
         //commonSentences.permissionButton.click();
         //commonSentences.locationButton.click();
-       // commonSentences.allowAllTime.click();
-       // commonSentences.backButton.click();
-       // commonSentences.backButton.click();
-      //  commonSentences.backButton.click();
+        // commonSentences.allowAllTime.click();
+        // commonSentences.backButton.click();
+        // commonSentences.backButton.click();
+        //  commonSentences.backButton.click();
         commonSentences.nextStep1.click();
         commonSentences.nextStep1.click();
-       // commonSentences.allowButton.click();
+        // commonSentences.allowButton.click();
         commonSentences.nextStep1.click();
-        commonSentences.nextStep1.click();
-        commonSentences.nextStep1.click();
+       commonSentences.nextStep1.click();
 
-        commonSentences.othaimMall.click();
-        wait(5);
-
-        commonSentences.startButton.click();
-
-        wait(20);
-
-        info("user navigates to" + othaimMall);
-
+        //commonSentences.othaimMall.click();
+      //  commonSentences.startButton.click();
+    //wait(25);
     }
 
     @Given("I should see {string} text in the {string}")
-    public void iShouldSeeTextInThe(String GF, String levelSelector) {
+    public void iShouldSeeTextInThe(String Level, String levelSelector) {
+        wait(10);
        Assert.assertTrue(commonSentences.levelSelector.isDisplayed());
-       Assert.assertEquals(GF, commonSentences.levelSelector);
+       wait(10);
+
     }
 
     @When("I type {string} into {string}")
     public void iTypeInto(String text, String searchInput) {
-        commonSentences.searchInput.sendKeys();
+
+        commonSentences.searchInput.sendKeys(text);
+        commonSentences.searchInput.click();
+        wait(5);
+    }
+
+    @Then("I click on {string}")
+    public void iClickOn(String firstResult) {
+        commonSentences.firstResult.click();
+    }
+
+    @And("{string} should be displayed")
+    public void shouldBeDisplayed(String text) {
+        Assert.assertTrue(commonSentences.directionButton.isDisplayed());
     }
 }
